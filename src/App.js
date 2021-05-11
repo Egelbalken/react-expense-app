@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Expenses from './components/Expenses/Expenses';
+import DummyData from './components/DummyData';
+import NewExpense from './components/NewEpense/NewExpense';
 
-function App() {
+// We forwarding DummyData in const expenase var.. And gives the
+// Expense component the data in a item atribute. The Data will be
+// parted in to props in Expenses.js file.
+const App = () => {
+  const expenses = DummyData;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NewExpense />
+      <Expenses items={expenses} />
     </div>
   );
-}
+};
 
 export default App;

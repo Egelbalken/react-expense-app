@@ -1,0 +1,19 @@
+-- Notes for React --
+
+Organisation of files:
+
+Components in the Component map.
+
+Images in the Images 
+
+
+Viktiga saker:
+
+Section 4 => 
+Hooks.. Buttons Onclick events.
+
+useStates: När vi vill ändra något.
+Den viktigaste kroken i react.
+
+När man skickar data genom kopmponenter kan man inte skippa underordnade komponenter.
+Datan måste igepnom alla.
