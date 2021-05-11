@@ -17,3 +17,5 @@ Den viktigaste kroken i react.
 
 När man skickar data genom kopmponenter kan man inte skippa underordnade komponenter.
 Datan måste igepnom alla.
+
+Viktigt = Sända data upp och ner. .59

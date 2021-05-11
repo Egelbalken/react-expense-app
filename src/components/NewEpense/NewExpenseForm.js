@@ -52,7 +52,7 @@ const NewExpenseForm = (props) => {
       date: new Date(enteredDate),
     };
 
-    // Check the object
+    // Forword data up to NewExpense.js throw props
     props.onSaveExpenseData(expenseData);
     // Reset/clear values in input to string after submit
     setEnteredTitle('');

@@ -5,15 +5,17 @@ import ExpenseForm from './NewExpenseForm';
 // Here we transfer data from child component to parent component.
 // We can not scip any of the components between.
 
-const NewExpense = () => {
+// We accept a props in the NewExpense function to hanlde data
+const NewExpense = (props) => {
   // Function that extracts the data from component ExpenseForm and save it.
-  // Then we can trensfer the data again.
+  // Then we can trensfer the data again up.
   const onSaveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
       id: Math.random().toString(),
     };
-    console.log(expenseData);
+    // forword it up to the App.js
+    props.onAddExpense(expenseData);
   };
   return (
     <div className="new-expense">
