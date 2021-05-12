@@ -8,7 +8,7 @@ import ExpenseForm from './NewExpenseForm';
 // We accept a props in the NewExpense function to hanlde data
 const NewExpense = (props) => {
   // Function that extracts the data from component ExpenseForm and save it.
-  // Then we can trensfer the data again up.
+  // Then we can trensfer the data again up. We want a inprop as a parameter here.
   const onSaveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,

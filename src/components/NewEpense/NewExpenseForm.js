@@ -42,13 +42,15 @@ const NewExpenseForm = (props) => {
     //});
   };
 
+  // This handler sublmits the form.
   const submitHandler = (event) => {
-    // overite update page
+    // makes the site not to update, 
     event.preventDefault();
 
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount + ' SEK',
+      // the date is formated from the html tag input
       date: new Date(enteredDate),
     };
 
