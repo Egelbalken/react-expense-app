@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Card from '../UI/Card';
 import ExpensesFilter from '../ExpenseFilter/ExpenseFilter';
 import ExpensesList from '../ExpensesList/ExpensesList';
+import ExpensesChart from '../Expenses/ExpensesChart';
 
 // The props comes from the Expenses component in App.js file.
 // the props.item have the atributes from the DummyData.js file.
@@ -17,7 +18,6 @@ const Expenses = (props) => {
 
   const filterYearChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
-    console.log('In expenses.js ' + selectedYear);
   };
 
   // Filter out the year. and then map throw the filtered list.
@@ -32,6 +32,7 @@ const Expenses = (props) => {
           selectedYear={filteredYear}
           onYearChange={filterYearChangeHandler}
         />
+        <ExpensesChart expenses={filteredExpenses} />
         <ExpensesList items={filteredExpenses} />
       </Card>
     </div>

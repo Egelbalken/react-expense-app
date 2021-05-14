@@ -4,7 +4,7 @@ import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 import '../UI/Card.css';
 
-// This component diaplays the props of price and title.
+// This component diaplays the props of amount and title.
 // It also transfer data from "dummy-data" to ExpanseDate component
 // To display data in to that component.
 const ExpenseItem = (props) => {
@@ -16,20 +16,18 @@ const ExpenseItem = (props) => {
   // is sperataed per individual item.
   const [title, setTitle] = useState(props.title);
 
-  const clickHandler = () => {
-    setTitle('Uppdated!');
-    console.log(title);
-  };
-
+  //const clickHandler = () => {
+  //  setTitle('Uppdated!');
+  //  console.log(title);
+  //};
   return (
     <li>
       <Card className="expense-item">
         <ExpenseDate date={props.date} />
         <div className="expense-item__description">
           <h2>{title}</h2>
-          <div className="expense-item__price">{props.price}Kr</div>
+          <div className="expense-item__price">{props.amount}Kr</div>
         </div>
-        <button onClick={clickHandler}>Change title</button>
       </Card>
     </li>
   );
