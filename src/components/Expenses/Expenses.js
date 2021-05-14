@@ -1,13 +1,17 @@
 import '../Expenses/Expenses.css';
 import React, { useState } from 'react';
-import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
 import ExpensesFilter from '../ExpenseFilter/ExpenseFilter';
+import ExpensesList from '../ExpensesList/ExpensesList';
 
 // The props comes from the Expenses component in App.js file.
 // the props.item have the atributes from the DummyData.js file.
 // It will no send the data to the props  ExpansItem.js that will
 // Display the data.
+// Controlled component = Two way bounding.
+// Pressentaional vs statful components/Dum vs smart component
+// Component need som state and is smart
+// but som e is a "state less" or dum component. Often dum components.
 const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState('2021');
 
@@ -15,6 +19,12 @@ const Expenses = (props) => {
     setFilteredYear(selectedYear);
     console.log('In expenses.js ' + selectedYear);
   };
+
+  // Filter out the year. and then map throw the filtered list.
+  const filteredExpenses = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
   return (
     <div>
       <Card className="expenses">
@@ -22,26 +32,7 @@ const Expenses = (props) => {
           selectedYear={filteredYear}
           onYearChange={filterYearChangeHandler}
         />
-        <ExpenseItem
-          title={props.items[0].title}
-          price={props.items[0].amount}
-          date={props.items[0].date}
-        />
-        <ExpenseItem
-          title={props.items[1].title}
-          price={props.items[1].amount}
-          date={props.items[1].date}
-        />
-        <ExpenseItem
-          title={props.items[2].title}
-          price={props.items[2].amount}
-          date={props.items[2].date}
-        />
-        <ExpenseItem
-          title={props.items[3].title}
-          price={props.items[3].amount}
-          date={props.items[3].date}
-        />
+        <ExpensesList items={filteredExpenses} />
       </Card>
     </div>
   );

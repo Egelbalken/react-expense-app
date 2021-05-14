@@ -44,12 +44,12 @@ const NewExpenseForm = (props) => {
 
   // This handler sublmits the form.
   const submitHandler = (event) => {
-    // makes the site not to update, 
+    // makes the site not to update,
     event.preventDefault();
 
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount + ' SEK',
+      amount: enteredAmount,
       // the date is formated from the html tag input
       date: new Date(enteredDate),
     };
@@ -94,6 +94,9 @@ const NewExpenseForm = (props) => {
           />
         </div>
         <div className="new-expense__actions">
+          <button className="btn" type="button" onClick={props.onCancel}>
+            Cancel
+          </button>
           <button className="btn" type="submit">
             Add Expense
           </button>
