@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
 import DummyData from './components/DummyData';
 import NewExpense from './components/NewEpense/NewExpense';
+import Background from './components/Background/Background';
 
 // We forwarding DummyData in const expenase var.. And gives the
 // Expense component the data in a item atribute. The Data will be
@@ -17,10 +18,10 @@ const App = () => {
     });
   };
   return (
-    <div>
+    <Background>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
-    </div>
+    </Background>
   );
 };
 
